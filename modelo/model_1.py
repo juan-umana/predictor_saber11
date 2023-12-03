@@ -21,7 +21,7 @@ model_success = BayesianNetwork([('cole_area_ubicacion','punt_total'), ('cole_bi
                   ('fami_tieneinternet','punt_total')])
 
 # Subir csv
-data_model = pd.read_csv("C:/Users/jd.umana10/Documents/GitHub/predictor_saber11/data/data_model.csv")
+data_model = pd.read_csv("C:/Users/jd.umana10/Documents/GitHub/predictor_saber11/data/data_model_1.csv")
 
 # Dividir datos en train y test
 X_train, X_test = train_test_split(data_model, random_state=42)
@@ -130,7 +130,7 @@ if __name__ == "__main__":
     accuracy_model = make_predictions(inference)
 
 import pickle
-filename='C:/Users/jd.umana10/Documents/GitHub/predictor_academico_2/aprendizaje_estructura/model.pkl'
+filename='C:/Users/jd.umana10/Documents/GitHub/predictor_saber11/modelo/model.pkl'
 with open(filename,'wb') as file:
     pickle.dump(model_success, file)
     file.close()
