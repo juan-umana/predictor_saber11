@@ -4,10 +4,10 @@ FROM python:3.10
 RUN adduser --disabled-password --gecos '' dash-user
 
 # Definir directorio de trabajo 
-WORKDIR /app
+WORKDIR /docker
 
 # Copiar contenido del directorio actual a la carpeta de trabajo
-COPY . /app
+COPY . /docker
 
 # Instala las dependencias del proyecto
 RUN pip install -r requirements.txt
