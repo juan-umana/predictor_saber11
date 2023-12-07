@@ -92,11 +92,11 @@ app.layout = html.Div(
                            options=["F","M"])]),
     #html.Div(["¿Cuántos cuartos tiene la casa en que resides?: ", dcc.Dropdown(id='var7', value="Tres", options=["Uno", "Dos", "Tres", "Cuatro", "Cinco", "Seis o mas"])]),
     html.Div(["¿Cuál es el nivel educativo de tu mamá?: ",
-              dcc.Dropdown(id='var8', value=10, 
-                           options=[ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12])]),
+              dcc.Dropdown(id='var8', value="Profesional completa", 
+                           options=[ "Ninguno",  "No aplica", "No sabe",  "Primaria completa",  "Primaria incompleta",  "Bachillerato completo",  "Bachillerato incompleto",  "Tecnica o tecnológica completa",  "Tecnica o tecnológica incompleta", "Profesional completa", "Profesional incompleta", "Posgrado"])]),
     html.Div(["¿Cuál es el nivel educativo de su papá?: ",
-              dcc.Dropdown(id='var9', value=10, 
-                           options=[ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12])]),    
+              dcc.Dropdown(id='var9', value="Profesional completa", 
+                           options=[  "Ninguno",  "No aplica", "No sabe",  "Primaria completa",  "Primaria incompleta",  "Bachillerato completo",  "Bachillerato incompleto",  "Tecnica o tecnológica completa",  "Tecnica o tecnológica incompleta", "Profesional completa", "Profesional incompleta", "Posgrado"])]),    
     html.Div(["¿Cuál es tu estrato socieconómico?: ",
               dcc.Dropdown(id='var10', value="Estrato 3", 
                            options=[ "Estrato 1",  "Estrato 2",  "Estrato 3",  "Estrato 4",  "Estrato 5",  "Estrato 6", "Sin estrato"])]),                                                                                                
@@ -271,6 +271,11 @@ def update_graphs(ubicacion):
         
 def update_prediction(var1, var2, var5, var6, var8, var9, var10, var11, var12, var13):
     # Predicción del estado estudiantil
+    nivel_educativo = {"Ninguno":1,  "No aplica":2, "No sabe":3,  "Primaria completa":4,  "Primaria incompleta":5,  
+                        "Bachillerato completo":6,  "Bachillerato incompleto":7,  "Tecnica o tecnológica completa":8,  
+                        "Tecnica o tecnológica incompleta":9, "Profesional completa":10, "Profesional incompleta":11, "Posgrado":12}
+    var8 = nivel_educativo[var8]
+    var9 = nivel_educativo[var9]
     values = [var1, var2, var5, var6, var8, var9, var10, var11, var12, var13]
     labels = ["cole_area_ubicacion","cole_bilingue","edad_presentacion",
                 "estu_genero","fami_educacionmadre_cod","fami_educacionpadre_cod",
