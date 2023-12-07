@@ -1,6 +1,5 @@
 from pgmpy.inference import VariableElimination
 from dash.dependencies import Input, Output
-#from dotenv import load_dotenv
 from dash import dcc  
 from dash import html 
 import plotly.graph_objects as go
@@ -24,18 +23,6 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 server = app.server
-
-# path to env file
-env_path=os.path.join("app.env")
-
-# load env 
-#load_dotenv(dotenv_path=env_path)
-# extract env variables
-#USER=os.getenv('USER')
-#PASSWORD=os.getenv('PASSWORD')
-#HOST=os.getenv('HOST')
-#PORT=os.getenv('PORT')
-#DBNAME=os.getenv('DBNAME')
 
 USER="postgres"
 PASSWORD="saberpro"
